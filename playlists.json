@@ -1,0 +1,14 @@
+{
+  "playlists": [
+    {
+      "name": "My First Playlist",
+      "image": "https://pbs.twimg.com/profile_banners/996353709683740673/1636298247/1500x500",
+      "id": 1
+    },
+    {
+      "name": "Alou",
+      "image": "a",
+      "id": 2
+    }
+  ]
+}
