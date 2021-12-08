@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface ContainerProps {
+  typeHeader: string;
+}
+
+export const Container = styled.div<ContainerProps>`
   background: var(--primary);
   padding: 30px 0;
 
   header {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 0 140px;
+    padding: ${(props: { typeHeader: string }) =>
+      props.typeHeader === "dashboard" ? "0 0 140px" : "0"};
     display: flex;
     align-items: center;
     justify-content: space-between;

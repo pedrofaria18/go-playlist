@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import BannerPlaylist from "../../components/BannerPlaylist";
+import Header from "../../components/Header";
 import ModalDeletePlaylist from "../../components/ModalDeletePlaylist";
 import ModalEditPlaylist from "../../components/ModalEditPlaylist";
 
@@ -25,12 +26,14 @@ export default function PlaylistPage() {
         isOpen={modalDeleteOpen}
         setIsOpen={toggleModalDelete}
       />
-      <BannerPlaylist
-        openModalEdit={toggleModalEdit}
-        openModalDelete={toggleModalDelete}
-        modalEditIsOpen={modalEditOpen}
-        modalDeleteIsOpen={modalDeleteOpen}
+      <Header
+        typeHeader="playlist"
+        openModalEditPlaylist={toggleModalEdit}
+        openModalDeletePlaylist={toggleModalDelete}
+        modalEditPlaylistIsOpen={modalEditOpen}
+        modalDeletePlaylistIsOpen={modalDeleteOpen}
       />
+      <BannerPlaylist />
     </Container>
   );
 }

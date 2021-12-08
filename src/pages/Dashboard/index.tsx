@@ -11,21 +11,24 @@ import { PlaylistsContainer } from "./styles";
 export default function Dashboard() {
   const { playlists } = usePlaylists();
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalCreatePlaylistOpen, setModalCreatePlaylistOpen] = useState(false);
 
   const toggleModal = () => {
-    setModalOpen(!modalOpen);
+    setModalCreatePlaylistOpen(!modalCreatePlaylistOpen);
   };
 
   return (
     <>
-      <Header openModal={toggleModal} />
+      <Header openModalCreatePlaylist={toggleModal} typeHeader="dashboard" />
 
-      <ModalNewPlaylist isOpen={modalOpen} setIsOpen={toggleModal} />
+      <ModalNewPlaylist
+        isOpen={modalCreatePlaylistOpen}
+        setIsOpen={toggleModal}
+      />
 
       <PlaylistsContainer>
         {playlists.map((playlist) => (
-          <Playlist key={playlist.id} data={playlist} />
+          <Playlist key={playlist.id} playlist={playlist} />
         ))}
       </PlaylistsContainer>
     </>

@@ -5,27 +5,27 @@ import { PlaylistData, usePlaylists } from "../../hooks/usePlaylists";
 import { Container, ContainerContent } from "./styles";
 
 interface PlaylistProps {
-  data: PlaylistData;
+  playlist: PlaylistData;
 }
 
-export default function Playlist({ data }: PlaylistProps) {
+export default function Playlist({ playlist }: PlaylistProps) {
   const navigate = useNavigate();
 
   const { handlePlaylistSelected } = usePlaylists();
 
   const handlePlaylistClick = async () => {
-    await handlePlaylistSelected(data.id);
-    navigate(`/playlist/${data.id}`);
-  }
+    await handlePlaylistSelected(playlist.id);
+    navigate(`/playlist/${playlist.id}`);
+  };
 
   return (
     <Container onClick={handlePlaylistClick}>
       <div className="image">
-        <img src={data.image} alt={data.name} />
+        <img src={playlist.image} alt={playlist.name} />
       </div>
 
       <ContainerContent>
-        <h1>{data.name}</h1>
+        <h1>{playlist.name}</h1>
         <p>0 Músicas</p>
       </ContainerContent>
     </Container>

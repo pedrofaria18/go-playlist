@@ -9,7 +9,10 @@ interface ModalDeletePlaylistProps {
   setIsOpen: () => void;
 }
 
-export default function ModalDeletePlaylist({ isOpen, setIsOpen }: ModalDeletePlaylistProps) {
+export default function ModalDeletePlaylist({
+  isOpen,
+  setIsOpen,
+}: ModalDeletePlaylistProps) {
   const navigate = useNavigate();
 
   const { selectedPlaylist, deletePlaylist } = usePlaylists();
@@ -18,7 +21,7 @@ export default function ModalDeletePlaylist({ isOpen, setIsOpen }: ModalDeletePl
     e.preventDefault();
 
     await deletePlaylist(selectedPlaylist.id);
-    
+
     setIsOpen();
     navigate("/");
   }
@@ -28,11 +31,18 @@ export default function ModalDeletePlaylist({ isOpen, setIsOpen }: ModalDeletePl
       <Container>
         <h1>Remover Playlist</h1>
 
-        <p>Deseja excluir a playlist <br/>{selectedPlaylist.name}?</p>
+        <p>
+          Deseja excluir a playlist <br />
+          {selectedPlaylist.name}?
+        </p>
 
         <div>
-          <button type="button" onClick={setIsOpen}>Cancelar</button>
-          <button type="button" onClick={handleSubmit}>Excluir playlist</button>
+          <button type="button" onClick={setIsOpen}>
+            Cancelar
+          </button>
+          <button type="button" onClick={handleSubmit}>
+            Excluir playlist
+          </button>
         </div>
       </Container>
     </Modal>

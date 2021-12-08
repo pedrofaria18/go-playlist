@@ -8,7 +8,7 @@ export const Container = styled.div<ContainerProps>`
   position: relative;
   display: inline-block;
 
-  button {
+  .button-menu {
     background: none;
     border: 0;
   }

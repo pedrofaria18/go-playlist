@@ -66,7 +66,9 @@ export default function ModalEditPlaylist({
             type="text"
             placeholder="Nome da Playlist"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setName(e.currentTarget.value)
+            }
             error={error.name}
           />
           <ErroMessage error={error.name}>
@@ -77,7 +79,9 @@ export default function ModalEditPlaylist({
             type="text"
             placeholder="Link da foto da Playlist"
             value={image}
-            onChange={(e) => setImage(e.target.value)}
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setImage(e.currentTarget.value)
+            }
             error={error.image}
           />
           <ErroMessage error={error.image}>
